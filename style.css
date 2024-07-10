@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    background: #3498DB;
+    color: white;
+    padding: 1%;
+}
+
+.headeritem {
+    margin-right: 10%;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: large;
+    margin-left: 10%;
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+    background: #3498DB;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    margin-top: 10%;
+    font-size: 3em;
+    font-weight: 200;
+}
+
+.hero-img {
+    margin-top: 15%;
+    width: 80%;
+}
+
+.textbox {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: medium;
+    margin-top: 4px;
+    width: 70%;
+    max-width: 300px;
+}
+
+.btn {
+    background: #e79c6e;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 4px;
+    margin-left: 3px;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.heading {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.heading1 {
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.features {
+    background-color: #F2F2F2;
+    color: #333;
+    text-align: center;
+    padding: 50px 5%;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.features p {
+    font-size: 1.5em;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.feature-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    max-width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.feature-item img {
+    max-width: 170px;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #888;
+    font-weight: 300;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #a0a0a0;
+    font-weight: 100;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 5px 0;
+}
+
+.user-img {
+    border-radius: 50%;
+    height: 30%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon1, .icon2, .icon3 {
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.icon1 {
+    width: 20%;
+    height: 10%;
+}
+
+.icon2 {
+    width: 10%;
+    height: 10%;
+}
+
+.icon3 {
+    width: 10%;
+    height: 10%;
+    margin-left: 15px;
+}
+
+.contact-form {
+    padding: 0 15%;
+}
+
+.contact-form h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-top: 60px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #e79c6e;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    .textbox{
+        padding: 10px;        
+        font-size: small;
+        margin-top: 10px;
+        width: 50%;
+        max-width: 300px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .btn{
+        padding: 10px;
+        margin-top: 4px;
+        margin-left: 3px;
+        color: white;
+        font-size: small;
+    }
+    .user-img {
+        height: 10%;
+        width: 60%;
+    }
+
+    .hero-img {
+        margin-top: 5%;
+        width: 100%;
+    }
+    .heading1 {
+        font-size: 1.5em;
+    }
+
+    .features {
+        padding: 20px 5%;
+    }
+    .feature-item img {
+        max-width: 100px;
+    }
+    .feature-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .features p {
+        font-size: 0.8em;
+        color: #888;
+        margin-bottom: 40px;
+    }
+
+    .feature-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        max-width: 90%;
+    }
+    .icon1 {
+        width: 12%;
+        height: 7%;
+    }
+    
+    .icon2 {
+        width: 7%;
+        height: 7%;
+    }
+    
+    .icon3 {
+        width: 7%;
+        height: 7%;
+        margin-left: 15px;
+    }
+
+    .contact-form h2 {
+        font-size: 25px;
+    }
+
+    .contact-form form input,
+    .contact-form form textarea {
+        padding: 5px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        font-size: 12px;
+    }
+    .contact-form button {
+        padding: 10px 16px;
+    }
+    .textbox {
+        width: 100%;
+        max-width: none;
+    }
+}
