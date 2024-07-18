@@ -12,39 +12,31 @@
 <body>
     <div class="container">
         <header class="head">
-           <div class="logo">FLATTY</div> 
-            <div class="headeritem">Already a member?</div> 
+            <div class="logo">FLATTY</div>
+            <div class="headeritem">Already a member?</div>
         </header>
         <div class="hero">
             <div class="hero-text">
                 <div>Make your landing Page<br> <span>look really good.</span></div>
                 <div>
-                    <input type="text" placeholder="Enter your email address" class="textbox">
-                    <button class="btn">Invite Me!</button>
+                    <input type="text" id="invite-email-1" placeholder="Enter your email address" class="textbox">
+                    <button class="btn" onclick="validateInviteEmail('invite-email-1')">Invite Me!</button>
                 </div>
             </div>
-            <div >
-                <img class="hero-img" src="./assets/BG.png" alt="BG">
-            </div>
             <div>
-
+                <img class="hero-img" src="./assets/BG.png" alt="BG">
             </div>
         </div>
 
         <div class="features">
             <div class="heading">
                 <div>
-                    <div class="heading1">
-                        Your Landing Page
-                    </div>
+                    <div class="heading1">Your Landing Page</div>
                     <div class="heading1">Looks wonderful Now.</div>
                     <div class="subheading">
-                        <p>
-                            It is long established fact that a reader will be <br> distracted by the readable content of page when <br> looking at its layout
-                        </p>
+                        <p>It is long established fact that a reader will be <br> distracted by the readable content of page when <br> looking at its layout</p>
                     </div>
                 </div>
-                
             </div>
             <div class="feature-items">
                 <div class="feature-item">
@@ -66,46 +58,32 @@
             <hr>
             <br>
             <div class="input-container">
-                    <input type="text" placeholder="Enter your email address" class="textbox">
-                    <button class="btn">Invite Me!</button>
+                <input type="text" id="invite-email-2" placeholder="Enter your email address" class="textbox">
+                <button class="btn" onclick="validateInviteEmail('invite-email-2')">Invite Me!</button>
             </div>
             <br>
             <hr>
-
             <div style="padding-top: 50px; margin-top: 20px;">
-                <h1 class="heading1">
-                    Flatty is for Everyone
-                </h1>
-                <p style="margin-top: 20px;">
-                    It is a long establish fact tha a reader will be <br> distracted by the readable content of a page when <br> looking at its layout.
-                </p>
-
+                <h1 class="heading1">Flatty is for Everyone</h1>
+                <p style="margin-top: 20px;">It is a long establish fact tha a reader will be <br> distracted by the readable content of a page when <br> looking at its layout.</p>
                 <div>
                     <img src="./assets/phone.png" alt="phone image" style="width: 15%; padding-bottom: 5%;">
                 </div>
-
                 <hr>
                 <br>
                 <div class="input-container">
-                        <input type="text" placeholder="Enter your email address" class="textbox">
-                        <button class="btn">Invite Me!</button>
+                    <input type="text" id="invite-email-3" placeholder="Enter your email address" class="textbox">
+                    <button class="btn" onclick="validateInviteEmail('invite-email-3')">Invite Me!</button>
                 </div>
                 <br>
                 <hr>
             </div>
 
             <div style="padding-top: 50px; margin-top: 20px;">
-                <h1 class="heading1">
-                    Our Awesome Team. <br>
-                    Design Lovers.
-                </h1>
-                <p>
-                    It is long established fact that a reader will be <br> distracted by the readable content of page when <br> looking at its layout
-                </p>
-
+                <h1 class="heading1">Our Awesome Team.<br>Design Lovers.</h1>
+                <p>It is long established fact that a reader will be <br> distracted by the readable content of page when <br> looking at its layout</p>
                 <div class="feature-items">
                     <div class="feature-item">
-                        
                         <img src="./assets/p1.jpg" alt="Browser Compatibility" class="user-img">
                         <h3>Michael Robson</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
@@ -137,22 +115,63 @@
                     </div>
                 </div>
                 <hr>
-            <br>
-            <div class="input-container">
-                    <input type="text" placeholder="Enter your email address" class="textbox">
-                    <button class="btn">Invite Me!</button>
-            </div>
-            <div class="contact-form">
-                <h2>Contact Us</h2>
-                <form action="#">
-                    <input type="text" placeholder="Your Name">
-                    <input type="email" placeholder="Your Email">
-                    <input type="text" placeholder="Subject">
-                    <textarea placeholder="Your Message"></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+                <br>
+                <div class="input-container">
+                    <input type="text" id="invite-email-4" placeholder="Enter your email address" class="textbox">
+                    <button class="btn" onclick="validateInviteEmail('invite-email-4')">Invite Me!</button>
+                </div>
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    <form id="contactForm" onsubmit="return validateContactForm()">
+                        <input type="text" id="contact-name" placeholder="Your Name">
+                        <input type="email" id="contact-email" placeholder="Your Email">
+                        <input type="text" id="contact-subject" placeholder="Subject">
+                        <textarea id="contact-message" placeholder="Your Message"></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
+
+        function validateInviteEmail(inputId) {
+            const emailInput = document.getElementById(inputId);
+            if (!validateEmail(emailInput.value)) {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+                return false;
+            }
+            alert('You have successfully subscribed.');
+            emailInput.value = '';
+            return true;
+        }
+
+        function validateContactForm() {
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+
+            if (name === '' || email === '' || subject === '' || message === '') {
+                alert('All fields are required.');
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                document.getElementById('contact-email').focus();
+                return false;
+            }
+
+            alert('Your message has been sent successfully.');
+            document.getElementById('contactForm').reset();
+            return true;
+        }
+    </script>
 </body>
 </html>
