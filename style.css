@@ -31,13 +31,14 @@ body {
 
 .hero {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     padding: 5%;
     background: #3498DB;
     color: white;
     flex-wrap: wrap;
     height: 60%;
-    padding-left: 10%;
+    padding-left: 8%;
     padding-bottom: 0.1%;
 }
 
@@ -49,7 +50,8 @@ body {
 
 .hero-img {
     margin-top: 15%;
-    width: 74%;
+    width: 70%;
+    
     
 }
 
@@ -234,6 +236,16 @@ hr {
     padding-bottom: 5%;
 }
 
+@media (max-width:1180px) {
+    .hero-text {
+        font-size: 2.5em;
+        font-weight: 200;
+    }
+    .hero-img {
+        margin-top: 5%;
+        width: 65%;
+    }
+}
 
 @media (max-width: 468px) {
     .logo{
@@ -253,7 +265,10 @@ hr {
         /* height: 30%; */
         padding-bottom: 0.1%;
     }
-
+    .hero-img {
+        margin-top: 5%;
+        width: 80%;
+    }
     .hero-text {
         font-size: 1.8em;
         text-align: center;
@@ -287,10 +302,7 @@ hr {
         width: 60%;
     }
 
-    .hero-img {
-        margin-top: 5%;
-        width: 100%;
-    }
+    
     .heading1 {
         font-size: 1.5em;
     }
